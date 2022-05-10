@@ -1,5 +1,5 @@
 const OrderPortion = (sequelize, DataTypes) => {
-  const orderPortion = sequelize.define('orderportions', {
+  const orderPortion = sequelize.define('OrderPortion', {
     id: {
       allowNull: false,
       autoIncrement: 612,

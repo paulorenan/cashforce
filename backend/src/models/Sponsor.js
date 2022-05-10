@@ -1,5 +1,5 @@
 const Sponsor = (sequelize, DataTypes) => {
-  const sponsor = sequelize.define('sponsors', {
+  const sponsor = sequelize.define('Sponsor', {
     id: {
       allowNull: false,
       autoIncrement: 17,

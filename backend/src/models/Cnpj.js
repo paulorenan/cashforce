@@ -1,5 +1,5 @@
 const Cnpj = (sequelize, DataTypes) => {
-  const cnpj = sequelize.define('cnpjs', {
+  const cnpj = sequelize.define('Cnpj', {
     id: {
       allowNull: false,
       autoIncrement: 437,

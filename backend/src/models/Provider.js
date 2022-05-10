@@ -1,5 +1,5 @@
 const Provider = (sequelize, DataTypes) => {
-  const provider = sequelize.define('providers', {
+  const provider = sequelize.define('Provider', {
     id: {
       allowNull: false,
       autoIncrement: 235,

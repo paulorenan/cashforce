@@ -1,5 +1,5 @@
 const Buyer = (sequelize, DataTypes) => {
-  const buyer = sequelize.define('buyers', {
+  const buyer = sequelize.define('Buyer', {
     id: {
       allowNull: false,
       autoIncrement: 152,
@@ -128,14 +128,7 @@ const Buyer = (sequelize, DataTypes) => {
     }
   }, { tableName: 'buyers' });
 
-  buyer.associate = function (models) {
-    buyer.belongsTo(models.Cnpj, {
-      foreignKey: 'cnpjId',
-      as: 'cnpj'
-    });
-  }
-
-    return buyer;
+  return buyer;
 }
 
 module.exports = Buyer;

@@ -1,53 +1,53 @@
 const Offer = (sequelize, DataTypes) => {
-  const offer = sequelize.define('offers', {
+  const offer = sequelize.define('Offer', {
     id: {
       allowNull: false,
       autoIncrement: 40,
       primaryKey: true,
-      type: Sequelize.INTEGER(11)
+      type: DataTypes.INTEGER(11)
     },
     tax: {
-      type: Sequelize.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     tariff: {
-      type: Sequelize.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     adValorem: {
-      type: Sequelize.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     float: {
-      type: Sequelize.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     iof: {
-      type: Sequelize.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     expiresIn: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
       allowNull: false
     },
     paymentStatusSponsor: {
-      type: Sequelize.INTEGER(1),
+      type: DataTypes.INTEGER(1),
       defaultValue: 0
     },
     paymentStatusProvider: {
-      type: Sequelize.INTEGER(1),
+      type: DataTypes.INTEGER(1),
       defaultValue: 0
     },
     createdAt: {
       allowNull: false,
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     },
     updatedAt: {
       allowNull: false,
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     },
     orderId: {
-      type: Sequelize.INTEGER(11),
+      type: DataTypes.INTEGER(11),
       defaultValue: null,
       references: {
         model: 'orders',
@@ -57,7 +57,7 @@ const Offer = (sequelize, DataTypes) => {
       }
     },
     sponsorId: {
-      type: Sequelize.INTEGER(11),
+      type: DataTypes.INTEGER(11),
       defaultValue: null,
       references: {
         model: 'sponsors',
@@ -67,7 +67,6 @@ const Offer = (sequelize, DataTypes) => {
       }
     }
   }, { tableName: 'offers' });
-
   offer.associate = (models) => {
     offer.belongsTo(models.Order, {
       foreignKey: 'orderId',

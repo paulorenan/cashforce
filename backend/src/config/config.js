@@ -1,26 +1,30 @@
+require('dotenv').config();
+
+const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
+
 module.exports = {
   "development": {
-    "username": "root",
-    "password": '123456',
-    "database": "db_test",
-    "host": "localhost",
-    "port": '3002',
+    "username": DB_USER || "root",
+    "password": DB_PASSWORD || '123456',
+    "database": DB_NAME || "cashforce_v3",
+    "host": DB_HOST || "localhost",
+    "port": DB_PORT || 3002,
     "dialect": "mysql",
   },
   "test": {
-    "username": "root",
-    "password": '123456',
-    "database": "db_test",
-    "host": "localhost",
-    "port": '3002',
+    "username": DB_USER || "root",
+    "password": DB_PASSWORD || '123456',
+    "database": DB_NAME || "cashforce_v3",
+    "host": DB_HOST || "localhost",
+    "port": DB_PORT || 3002,
     "dialect": "mysql",
   },
   "production": {
-    "username": "root",
-    "password": '123456',
-    "database": "db_test",
-    "host": "localhost",
-    "port": '3002',
+    "username": DB_USER || "root",
+    "password": DB_PASSWORD || '123456',
+    "database": DB_NAME || "cashforce_v3",
+    "host": DB_HOST || "localhost",
+    "port": DB_PORT || 3002,
     "dialect": "mysql",
   }
 }

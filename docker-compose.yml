@@ -1,5 +1,10 @@
 version: '3.9'
 services:
+  frontend:
+    build: ./frontend
+    restart: 'always'
+    ports:
+      - 8080:8080
   backend:
     build: ./backend
     restart: 'unless-stopped'
@@ -13,7 +18,7 @@ services:
       - DB_USER=root
       - DB_PASS=123456
       - DB_HOST=db
-      - DB_NAME=TRYBE_FUTEBOL_CLUBE
+      - DB_NAME=cashforce_v3
       - DB_PORT=3306
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3001"]

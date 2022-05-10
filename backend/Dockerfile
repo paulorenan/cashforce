@@ -10,5 +10,5 @@ COPY . .
 
 EXPOSE 3001
 
-CMD ["npx", "sequelize", "db:create", "&&", "npx", "sequelize", "db:migrate"]
+CMD ["npm", "start"]
 

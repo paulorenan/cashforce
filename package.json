@@ -1,0 +1,14 @@
+{
+  "name": "cashforce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compose:up": "(docker-compose up -d --build && cd backend && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all)",
+    "compose:down": "docker-compose down --remove-orphans",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

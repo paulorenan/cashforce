@@ -100,18 +100,15 @@ module.exports = {
       },
       situationDate: {
         type: Sequelize.DATE,
-        allowNull: false,
-        defaultValue: Sequelize.NOW
+        defaultValue: null,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
       },
       cnpjId: {
         type: Sequelize.INTEGER(11),

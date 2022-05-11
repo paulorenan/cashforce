@@ -68,7 +68,6 @@ import axios from 'axios'
         axios.get(`http://localhost:3001/cnpjs/${this.provider.cnpjId}/`)
           .then(res => {
             this.cnpj = res.data
-            console.log(res.data)
           }).catch(error => {
             console.log(error)
           })

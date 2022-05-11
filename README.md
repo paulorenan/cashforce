@@ -12,7 +12,7 @@
 Clone o projeto
 
 ```bash
-  git clone https://github.com/paulorenan/cashforce
+  git clone https://github.com/paulorenan/cashforce.git
 ```
 
 Entre no diretório do projeto

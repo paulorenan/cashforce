@@ -29,7 +29,7 @@
           <v-btn
             outlined
             rounded
-            color="primary"
+            color="#727D94"
           >
             Dados do Cedente
           </v-btn>

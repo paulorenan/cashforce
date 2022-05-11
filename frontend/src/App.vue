@@ -5,7 +5,7 @@
       v-model="drawer"
       app
     >
-      <!--  -->
+      <DrawerComp />
     </v-navigation-drawer>
     <v-app-bar app elevation="1" />
 
@@ -17,10 +17,12 @@
 
 <script>
 import HomePage from './components/HomePage.vue'
+import DrawerComp from './components/DrawerComp.vue';
 
 export default {
   components: {
     HomePage,
+    DrawerComp
 },
 
   data: () => ({

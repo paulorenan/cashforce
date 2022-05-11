@@ -2,13 +2,13 @@
   <v-simple-table>
     <thead>
       <tr class="table-header">
-        <th>Nota Fiscal</th>
-        <th>Sacado</th>
-        <th>Cedente</th>
-        <th>Emissão</th>
-        <th>Valor</th>
-        <th>Status</th>
-        <th>Ver Cedente</th>
+        <th>NOTA FISCAL</th>
+        <th>SACADO</th>
+        <th>CEDENTE</th>
+        <th>EMISSÃO</th>
+        <th>VALOR</th>
+        <th>STATUS</th>
+        <th>VER CEDENTE</th>
       </tr>
     </thead>
     <tbody>
@@ -26,13 +26,7 @@
           {{ formatStatus(order.orderStatusBuyer).message }}
         </td>
         <td>
-          <v-btn
-            outlined
-            rounded
-            color="#727D94"
-          >
-            Dados do Cedente
-          </v-btn>
+          <ProviderDialog :provider="order.provider" />
         </td>
       </tr>
     </tbody>
@@ -40,34 +34,36 @@
 </template>
 
 <script>
+import ProviderDialog from './ProviderDialog.vue';
 export default {
-  props: {
-    orders: Array,
-  },
-  methods: {
-    formatStatus(status) {
-      switch (status) {
-        case "0":
-          return { message: "Pendente de confirmação", color: "amarelo" }
-        case "1":
-          return {message: "Pedido confirmado", color: "verde"}
-        case "2":
-          return {message: "Não reconhece o pedido", color: "vermelho"}
-        case "3":
-          return {message: "Mercadoria não recebida", color: "vermelho"}
-        case "4":
-          return {message: "Recebida com avaria", color: "vermelho"}
-        case "5":
-          return {message: "Devolvida", color: "amarelo"}
-        case "6":
-          return {message: "Recebida com devolução parcial", color: "amarelo"}
-        case "7":
-          return {message: "Recebida e confirmada", color: "verde"}
-        case "8":
-          return {message: "Pagamento Autorizado", color: "verde"}
-      }
-    },            
-  },
+    props: {
+        orders: Array,
+    },
+    methods: {
+        formatStatus(status) {
+            switch (status) {
+                case "0":
+                    return { message: "Pendente de confirmação", color: "amarelo" };
+                case "1":
+                    return { message: "Pedido confirmado", color: "verde" };
+                case "2":
+                    return { message: "Não reconhece o pedido", color: "vermelho" };
+                case "3":
+                    return { message: "Mercadoria não recebida", color: "vermelho" };
+                case "4":
+                    return { message: "Recebida com avaria", color: "vermelho" };
+                case "5":
+                    return { message: "Devolvida", color: "amarelo" };
+                case "6":
+                    return { message: "Recebida com devolução parcial", color: "amarelo" };
+                case "7":
+                    return { message: "Recebida e confirmada", color: "verde" };
+                case "8":
+                    return { message: "Pagamento Autorizado", color: "verde" };
+            }
+        },
+    },
+    components: { ProviderDialog }
 };
 </script>
 
